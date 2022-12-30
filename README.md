@@ -69,6 +69,7 @@
 2. このリポジトリをクローンする
    ```sh
    gh repo clone JensenYuen/popu-graph
+   cd popu-graph
    ```
 3. NPMパッケージをインストールするとnpm run build
    ```sh
