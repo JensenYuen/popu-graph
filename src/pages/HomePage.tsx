@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react';
-import '../stylesheets/homepage.css';
 import CheckBox from '../components/CheckBox';
 import Graph from '../components/Graph';
 import { getAllPrefectures, getPrefPopulation } from '../controllers/apiController';
 import { PrefInfo } from '../constants/apiModal'
+import Overlay from '../components/Overlay';
+import '../stylesheets/homepage.scss';
+import '../stylesheets/global.scss';
 
 export interface graphData {
   prefCode: number;
@@ -86,9 +88,7 @@ const HomePage = () => {
 
   return (
     <main>
-      <div className={`overlay ${isLoading ? '': 'hidden'}`}>
-        <div className='spinner' />
-      </div>
+      {isLoading && <Overlay />}
       <h1 style={{ background:'#7a7a7a', textAlign:'center', margin: 0, fontWeight: 'normal'}}>日本府県人口</h1>
       <div className='container'>
         <div className='content'>
