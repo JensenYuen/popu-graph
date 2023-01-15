@@ -6,7 +6,7 @@ interface props {
 }
 
 const Toast = ({ message }: props) => {
-  toast(message,{
+  toast(message, {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: false
   })
