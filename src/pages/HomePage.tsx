@@ -58,8 +58,7 @@ const HomePage = () => {
     if (data.data) {
       setprefectures(data.data!)
     } else {
-      // console.log(data);
-
+      setErrorMessage(data.message!)
     }
 
     setIsLoading(false);
@@ -93,7 +92,7 @@ const HomePage = () => {
   return (
     <main>
       {isLoading && <Overlay />}
-      <Toast message={errorMessage}/>
+      {errorMessage && <Toast type='error' message={errorMessage}/>}
       <h1 style={{ background:'#7a7a7a', textAlign:'center', margin: 0, fontWeight: 'normal'}}>日本府県人口</h1>
       <div className='container'>
         <div className='content'>
