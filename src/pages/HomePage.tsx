@@ -93,7 +93,13 @@ const HomePage = () => {
     <main>
       {isLoading && <Overlay />}
       {errorMessage && <Toast type='error' message={errorMessage}/>}
-      <h1 style={{ background:'#7a7a7a', textAlign:'center', margin: 0, fontWeight: 'normal'}}>日本府県人口</h1>
+      <h1 style={{
+        background:'#7a7a7a',
+        textAlign:'center',
+        margin: 0,
+        fontWeight: 'normal',
+        color:'snow'}}>
+          日本府県人口</h1>
       <div className='container'>
         <div className='content'>
           <fieldset className='fieldset'>
