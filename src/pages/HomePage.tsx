@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
-import '../stylesheets/homepage.css';
-import CheckBox from '../components/CheckBox';
-import Graph from '../components/Graph';
+import { CheckBox, Graph, Overlay, Toast } from '../components';
 import { getAllPrefectures, getPrefPopulation } from '../controllers/apiController';
 import { PrefInfo } from '../constants/apiModal'
+import '../stylesheets/homepage.scss';
+import '../stylesheets/global.scss';
 
 export interface graphData {
   prefCode: number;
@@ -17,6 +17,7 @@ const HomePage = () => {
   const [prefCodes, setPrefCodes] = useState<number[]>([]);
   const [prefInfos, setPrefInfos] = useState<graphData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useMemo(() => {
     setIsLoading(true);
@@ -54,7 +55,11 @@ const HomePage = () => {
   useMemo(async () => {
     setIsLoading(true);
     const data = await getAllPrefectures();
-    setprefectures(data.data!)
+    if (data.data) {
+      setprefectures(data.data!)
+    } else {
+      setErrorMessage(data.message!)
+    }
 
     setIsLoading(false);
   },[])
@@ -86,10 +91,15 @@ const HomePage = () => {
 
   return (
     <main>
-      <div className={`overlay ${isLoading ? '': 'hidden'}`}>
-        <div className='spinner' />
-      </div>
-      <h1 style={{ background:'#7a7a7a', textAlign:'center', margin: 0, fontWeight: 'normal'}}>日本府県人口</h1>
+      {isLoading && <Overlay />}
+      {errorMessage && <Toast type='error' message={errorMessage}/>}
+      <h1 style={{
+        background:'#7a7a7a',
+        textAlign:'center',
+        margin: 0,
+        fontWeight: 'normal',
+        color:'snow'}}>
+          日本府県人口</h1>
       <div className='container'>
         <div className='content'>
           <fieldset className='fieldset'>
