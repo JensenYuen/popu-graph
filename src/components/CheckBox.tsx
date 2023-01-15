@@ -1,5 +1,6 @@
 import React from "react";
 import { PrefInfo } from "../constants";
+import '../stylesheets/checkbox.scss'
 
 interface props {
   prefecture: PrefInfo

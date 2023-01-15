@@ -1,17 +1,10 @@
-.checkbox {
-  height: fit-content;
-  width: fit-content;
-  margin-bottom: 0.5rem;
-}
-
-.checkbox-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
-  align-items: center;
-}
-
 .fieldset {
   margin-bottom: 2rem;
+  .checkbox-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(94px, 1fr));
+    align-items: center;
+  }
 }
 
 .graph {
