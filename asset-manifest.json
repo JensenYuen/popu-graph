@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/popu-graph/static/css/main.dd7e8435.css",
-    "main.js": "/popu-graph/static/js/main.86976e6f.js",
+    "main.css": "/popu-graph/static/css/main.2095441f.css",
+    "main.js": "/popu-graph/static/js/main.b788b407.js",
     "index.html": "/popu-graph/index.html",
-    "main.dd7e8435.css.map": "/popu-graph/static/css/main.dd7e8435.css.map",
-    "main.86976e6f.js.map": "/popu-graph/static/js/main.86976e6f.js.map"
+    "main.2095441f.css.map": "/popu-graph/static/css/main.2095441f.css.map",
+    "main.b788b407.js.map": "/popu-graph/static/js/main.b788b407.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd7e8435.css",
-    "static/js/main.86976e6f.js"
+    "static/css/main.2095441f.css",
+    "static/js/main.b788b407.js"
   ]
 }
